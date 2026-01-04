@@ -35,9 +35,10 @@ export const ERROR_MESSAGE = {
   POSTS_ARRAY_REQUIRED: 'Posts array is required',
   INVALID_POSTS_ARRAY: 'Posts must be an array',
 
-  // Comment 관련 (새로 추가)
-  COMMENT_NOT_FOUND: 'Comment not found',
-  COMMENT_CONTENT_REQUIRED: 'Comment content is required',
-  FAILED_TO_CREATE_COMMENT: 'Failed to create comment',
-  FAILED_TO_DELETE_COMMENT: 'Failed to delete comment',
+  // Auth 관련
+  NO_AUTH_TOKEN: 'No authentication token provided',
+  INVALID_TOKEN: 'Invalid or expired token',
+  USER_NOT_FOUND_FROM_TOKEN: 'User not found from token',
+  AUTH_FAILED: 'Authentication failed',
+  INVALID_CREDENTIALS: 'Invalid email or password',
 };
