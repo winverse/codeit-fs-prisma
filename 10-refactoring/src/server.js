@@ -4,6 +4,7 @@ import { config } from '#config';
 import { router as apiRouter } from './routes/index.js';
 import cookieParser from 'cookie-parser';
 import { errorHandler } from '#middlewares';
+import { setupGracefulShutdown } from '#utils';
 
 const app = express();
 
@@ -18,13 +19,11 @@ app.use('/api', apiRouter);
 
 app.use(errorHandler);
 
-app.listen(config.PORT, () => {
+const server = app.listen(config.PORT, () => {
   console.log(
     `[${config.NODE_ENV}] Server running at http://localhost:${config.PORT}`,
   );
 });
 
-process.on('SIGINT', async () => {
-  await prisma.$disconnect();
-  process.exit(0);
-});
+// Setup graceful shutdown handlers
+setupGracefulShutdown(server, prisma);
