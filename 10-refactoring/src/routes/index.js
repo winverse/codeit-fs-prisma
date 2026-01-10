@@ -6,7 +6,7 @@ import { HTTP_STATUS } from '#constants';
 
 export const router = express.Router();
 
-router.use('/', (req, res) => {
+router.get('/', (req, res) => {
   res
     .status(HTTP_STATUS.OK)
     .send({ now: new Date().toISOString(), message: 'OK' });
