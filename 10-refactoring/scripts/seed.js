@@ -12,6 +12,7 @@ const pickRandom = (array) =>
 const makeUserInput = () => ({
   email: faker.internet.email(),
   name: faker.person.fullName(),
+  password: faker.internet.password(),
 });
 
 const makePostInputsForUser = (userId, count) =>
